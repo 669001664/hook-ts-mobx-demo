@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+    font-family: NotoSansSC;
+    src: url('./assets/NotoSansSC-Medium.682b4b8d.otf');
+}
+
+* {
+    font-family: NotoSansSC, sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: block;
+    height: 10px;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff61;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a6a6a661;
+}
+
+.ant-input:focus {
+    border-color: black !important;
+    box-shadow: 0 0 0 2px #00000033 !important;
+}
+
+.ant-input-focused {
+    border-color: black !important;
+    box-shadow: 0 0 0 2px #00000033 !important;
+}

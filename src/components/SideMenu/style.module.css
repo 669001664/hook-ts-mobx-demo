@@ -1,0 +1,54 @@
+@value colors '../../styles/colors.module.css';
+
+@value black from colors;
+
+.root {
+    background: black;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+:global(.ant-layout-sider-children) {
+    width: 100%;
+}
+
+.sideBarItem {
+    font-size: 14px;
+    font-weight: bold;
+    color: gray;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.sideBarItemActive {
+    background-color: #282828;
+    color: white;
+    border-radius: 4px;
+}
+
+.sideBarItem:hover {
+    color: white;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.logo {
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    width: 164px;
+}
