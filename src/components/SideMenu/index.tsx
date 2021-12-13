@@ -1,15 +1,18 @@
 import React from "react";
 import { useNavigate, useLocation } from 'react-router-dom'
 import ROUTES from "../../router";
-import Sider from "antd/lib/layout/Sider";
+import { Layout } from "antd";
 import styles from './style.module.css'
+import logo from '../../assets/iamges/logo.png'
+
+const { Sider } = Layout;
 
 const SiderBar: React.FC = () => {
-  const navigate = useNavigate()
-  const go = (path: string): void => {
-    // navigate(path)
-  }
+  const navigate = useNavigate();
   const location = useLocation();
+  const go = (path: string): void => {
+    navigate(path)
+  }
   const siderBarList = [
     {
       id: 1,
@@ -52,10 +55,13 @@ const SiderBar: React.FC = () => {
     }
   ]
   return (
-    <Sider>
+    <Sider className={styles.root}>
+      <div className={'mb-5'}>
+        <img className={styles.logo} src={logo} alt="" />
+      </div>
       {siderBarList.map(item => {
         return (
-          <div key={item.id} className={`${styles.sideBarItem} ${item.path === location.pathname?`sideBarItemActive`: null}`}
+          <div key={item.id} className={`${styles.sideBarItem} ${'/' + item.path === location.pathname ? styles.sideBarItemActive : null}`}
             onClick={() => {
               go(item.path)
             }}>
